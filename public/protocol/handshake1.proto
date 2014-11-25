@@ -1,0 +1,18 @@
+package Game.Protocol;
+
+message HandshakeRequest {
+	required string version = 1;
+}
+
+message HandshakeResponse {
+	required bool accept = 1;
+}
+
+message Message {
+	oneof request {
+		HandshakeRequest handshakeRequest = 1;
+		HandshakeResponse handshakeResponse = 2;
+
+	}
+}
+
